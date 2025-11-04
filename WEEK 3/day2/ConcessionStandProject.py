@@ -14,3 +14,12 @@ while True:
     food = input("What food do you like? (q to quit): ")
     if food.lower() == "q":
         break
+    elif menu.get(food) is not None:
+        cart.append(food)
+print("----------------------------")
+for food in cart:
+    total = total + menu.get(food)
+    print(food, end = " ")
+
+print()
+print(f"Your total is : ${total:.2f}")
